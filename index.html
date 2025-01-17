@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,32 +8,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="conteiner">
+    <div class="contenedor">
         <div class="perfil">
             <div id="fecha"></div>
 
-            <h1 id="greeting">Bienvenido</h1>
-            <div id="loginSection">
-                <input type="text" id="username" placeholder="Ingresa tu nombre" />
-                <button id="enterButton">Entrar</button>
+            <h1 id="saludo">Bienvenido</h1>
+            <div id="seccionLogin">
+                <input type="text" id="nombreUsuario" placeholder="Ingresa tu nombre" />
+                <button id="botonEntrar">Entrar</button>
             </div>
           
+            <div class="agregarTarea">
+                <input type="text" id="input" placeholder="Nueva tarea...">
+                <i id="botonAgregar" class="fas fa-plus-circle"></i>
+            </div>
 
-    <div  class="agregarTarea">
-        <input type="text" id="input" placeholder="Nueva tarea...">
-
-      <i id="btn-agregar" class="fas fa-plus-circle"></i>
-
-        
-    </div>
-
-    <div class="seleccionarTarea">
-        <h2>Tareas pendientes...</h2>
-        <ul id="listaTareas">
-                
-            
-        </ul>
-    </div>
+            <div class="seleccionarTarea">
+                <h2>Tareas pendientes...</h2>
+                <ul id="listaTareas">
+                </ul>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
