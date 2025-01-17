@@ -123,34 +123,41 @@ function cargarLista(DATA){
 })
 }
 const usernameInput = document.getElementById('username');
-        const enterButton = document.getElementById('enterButton');
-        const textArea = document.getElementById('textArea');
-        const userNameDisplay = document.getElementById('userName');
-        const saveButton = document.getElementById('saveButton');
-        const savedText = document.getElementById('savedText');
-        const userText = document.getElementById('userText');
-        const deleteNameButton = document.getElementById('deleteNameButton');
-      
-      
-        const storedName = localStorage.getItem('username');
-        const storedText = localStorage.getItem('savedText');
-        if (storedName) {
-            document.getElementById('greeting').textContent = `Bienvenido de nuevo, ${storedName}`;
-            document.getElementById('loginSection').style.display = 'none';
-            textArea.style.display = 'block';
-            userNameDisplay.textContent = storedName;
-        }
-        if (storedText) {
-            savedText.textContent = storedText;
-        }
+const enterButton = document.getElementById('enterButton');
+const textArea = document.getElementById('textArea');
+const userNameDisplay = document.getElementById('userName');
+const saveButton = document.getElementById('saveButton');
+const savedText = document.getElementById('savedText');
+const userText = document.getElementById('userText');
+const deleteNameButton = document.getElementById('deleteNameButton');
 
-        
+const storedName = localStorage.getItem('username');
+const storedText = localStorage.getItem('savedText');
+if (storedName) {
+    document.getElementById('greeting').textContent = `Bienvenido de nuevo, ${storedName}`;
+    document.getElementById('loginSection').style.display = 'none';
+    textArea.style.display = 'block';
+    userNameDisplay.textContent = storedName;
+}
+if (storedText) {
+    savedText.textContent = storedText;
+}
 
-       
-        saveButton.addEventListener('click', () => {
-            const text = userText.value.trim();
-            if (text) {
-                localStorage.setItem('savedText', text);
-                savedText.textContent = text;
-            }
-        });
+enterButton.addEventListener('click', () => {
+    const username = usernameInput.value.trim();
+    if (username) {
+        localStorage.setItem('username', username);
+        document.getElementById('greeting').textContent = `Bienvenido, ${username}`;
+        document.getElementById('loginSection').style.display = 'none';
+        textArea.style.display = 'block';
+        userNameDisplay.textContent = username;
+    }
+});
+
+saveButton.addEventListener('click', () => {
+    const text = userText.value.trim();
+    if (text) {
+        localStorage.setItem('savedText', text);
+        savedText.textContent = text;
+    }
+});
